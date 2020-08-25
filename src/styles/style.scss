@@ -1,1 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
+
+.dark {
+  color: #000;
+  background-color: #eee;
+}
+
+.light {
+  color: #eee;
+  background-color: #000;
+}

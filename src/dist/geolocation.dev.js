@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.geolocation = void 0;
+exports["default"] = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -16,7 +16,7 @@ var FETCH_IP_API_URL = 'https://www.cloudflare.com/cdn-cgi/trace';
 
 var geolocation = function () {
   var getLocation = function getLocation(ipAddress) {
-    var result, _result$data, city, latitude, longitude, country_name;
+    var result, _result$data, city, latitude, longitude;
 
     return regeneratorRuntime.async(function getLocation$(_context) {
       while (1) {
@@ -28,12 +28,12 @@ var geolocation = function () {
 
           case 3:
             result = _context.sent;
-            _result$data = result.data, city = _result$data.city, latitude = _result$data.latitude, longitude = _result$data.longitude, country_name = _result$data.country_name;
+            _result$data = result.data, city = _result$data.city, latitude = _result$data.latitude, longitude = _result$data.longitude;
             return _context.abrupt("return", {
               city: city,
               latitude: latitude,
               longitude: longitude,
-              country_name: country_name
+              countryName: result.data.country_name
             });
 
           case 8:
@@ -82,4 +82,5 @@ var geolocation = function () {
   };
 }();
 
-exports.geolocation = geolocation;
+var _default = geolocation;
+exports["default"] = _default;

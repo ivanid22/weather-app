@@ -1,15 +1,17 @@
 import 'bootstrap';
-import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import './styles/style.scss';
-import { geolocation } from './geolocation';
+import geolocation from './geolocation';
+import weather from './weather';
+
 
 const testGeoloc = async () => {
   const ip = await geolocation.getClientIpAddress();
-  const data = await geolocation.getLocation(ip);
-  console.log(data);
-}
+  const locData = await geolocation.getLocation(ip);
+  const weatherData = await weather.getWeatherData(locData);
+  console.log(weatherData);
+};
 
 window.onload = () => {
   testGeoloc();
-}
+};
