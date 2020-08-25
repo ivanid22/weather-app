@@ -1,10 +1,15 @@
 import 'bootstrap';
 import 'swiper/swiper-bundle.css';
 import './styles/style.scss';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import geolocation from './geolocation';
 import weather from './weather';
+import theming from './theming';
 
+Swiper.use([Navigation, Pagination]);
 
+const themeSwitcher = theming();
+let swiper;
 const testGeoloc = async () => {
   const ip = await geolocation.getClientIpAddress();
   const locData = await geolocation.getLocation(ip);
@@ -14,4 +19,14 @@ const testGeoloc = async () => {
 
 window.onload = () => {
   testGeoloc();
+  document.querySelectorAll('div').forEach((elem) => {
+    themeSwitcher.addElement(elem);
+  });
+  window.switchTheme = themeSwitcher.switchTheme;
+  swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+    }
+  });
 };
