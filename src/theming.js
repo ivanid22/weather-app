@@ -17,7 +17,6 @@ const theming = () => {
     elements.forEach(element => {
       if(element.tagName.toLowerCase() === 'img') element.classList.toggle('invert-img');
       else {
-        console.log(element.tagName.toLowerCase());
         clearElement(element);
         element.classList.add(currentTheme);
       }

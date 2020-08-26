@@ -23,7 +23,6 @@ var theming = function theming() {
     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
     elements.forEach(function (element) {
       if (element.tagName.toLowerCase() === 'img') element.classList.toggle('invert-img');else {
-        console.log(element.tagName.toLowerCase());
         clearElement(element);
         element.classList.add(currentTheme);
       }

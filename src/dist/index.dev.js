@@ -8,6 +8,8 @@ require("swiper/swiper-bundle.css");
 
 require("./styles/style.scss");
 
+var _jsEventAggregator = require("@ivanid22/js-event-aggregator");
+
 var _swiper = _interopRequireWildcard(require("swiper"));
 
 var _geolocation = _interopRequireDefault(require("./geolocation"));
@@ -16,7 +18,9 @@ var _weather = _interopRequireDefault(require("./weather"));
 
 var _theming = _interopRequireDefault(require("./theming"));
 
-var _weatherImages = _interopRequireWildcard(require("./weather-images"));
+var _state = _interopRequireDefault(require("./state"));
+
+var _display = _interopRequireDefault(require("./display"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -27,11 +31,27 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 _swiper["default"].use([_swiper.Navigation, _swiper.Pagination]);
 
 var themeSwitcher = (0, _theming["default"])();
+var state = (0, _state["default"])();
+var events = (0, _jsEventAggregator.getAggregatorInstance)();
 var swiper;
+events.subscribe('WEATHER_DATA_LOADED', function (data) {
+  _display["default"].displayWeatherData(data);
+});
+events.subscribe('CHANGE_THEME_CLICK', function () {
+  var currentTheme = state.getValue('theme');
+  var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  state.setValue('theme', newTheme);
+  themeSwitcher.switchTheme();
 
-var testGeoloc = function testGeoloc() {
+  _display["default"].updateThemeButton();
+});
+events.subscribe('WEATHER_ICON_CHANGED', function (icon) {
+  themeSwitcher.addElement(icon);
+});
+
+var fetchAppData = function fetchAppData() {
   var ip, locData, weatherData;
-  return regeneratorRuntime.async(function testGeoloc$(_context) {
+  return regeneratorRuntime.async(function fetchAppData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
@@ -45,14 +65,33 @@ var testGeoloc = function testGeoloc() {
 
         case 5:
           locData = _context.sent;
-          _context.next = 8;
+
+          if (!locData) {
+            _context.next = 12;
+            break;
+          }
+
+          _context.next = 9;
           return regeneratorRuntime.awrap(_weather["default"].getWeatherData(locData));
 
-        case 8:
+        case 9:
           weatherData = _context.sent;
-          console.log(weatherData);
+          _context.next = 15;
+          break;
 
-        case 10:
+        case 12:
+          _context.next = 14;
+          return regeneratorRuntime.awrap(_weather["default"].getWeatherData({
+            city: 'Buenos Aires'
+          }));
+
+        case 14:
+          weatherData = _context.sent;
+
+        case 15:
+          events.publish('WEATHER_DATA_LOADED', weatherData);
+
+        case 16:
         case "end":
           return _context.stop();
       }
@@ -61,21 +100,17 @@ var testGeoloc = function testGeoloc() {
 };
 
 window.onload = function () {
-  //testGeoloc();
-  document.querySelectorAll('div').forEach(function (elem) {
-    themeSwitcher.addElement(elem);
-  });
-  window.switchTheme = themeSwitcher.switchTheme;
+  _display["default"].init();
+
+  fetchAppData();
+  state.setValue('weatherUnits', 'C');
+  state.setValue('theme', 'light');
   swiper = new _swiper["default"]('.swiper-container', {
     pagination: {
       el: '.swiper-pagination',
-      dynamicBullets: true,
+      dynamicBullets: false,
       init: false
     }
   });
   swiper.init();
-  var splash = document.querySelector('.current-weather-splash');
-  var splashImg = (0, _weatherImages.createIconElement)(_weatherImages["default"]['01d']);
-  splash.appendChild(splashImg);
-  themeSwitcher.addElement(splashImg);
 };

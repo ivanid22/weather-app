@@ -11,6 +11,7 @@ const weather = (() => {
         request = await axios.get(WEATHER_API_URL, {
           params: {
             appid: WEATHER_API_KEY,
+            units: 'metric',
             lat: latitude,
             lon: longitude,
           },

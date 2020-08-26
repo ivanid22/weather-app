@@ -1,4 +1,8 @@
 @import "bootstrap/scss/bootstrap";
+* {
+  transition: all 0.5s ease;
+}
+
 html {
   font-size: 16px;
 }
@@ -41,11 +45,13 @@ body {
 .dark {
   color: #fff;
   background-color: #000;
+  border-color: #fff;
 }
 
 .light {
   color: #000;
   background-color: #fff;
+  border-color: #000;
 }
 
 .top-row {
@@ -64,4 +70,18 @@ body {
 
 .invert-img {
   filter: invert(1);
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 0.1rem;
+}
+
+.ui-button {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 0.2em 1em;
 }

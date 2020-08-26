@@ -31,6 +31,7 @@ var weather = function () {
             return regeneratorRuntime.awrap(_axios["default"].get(WEATHER_API_URL, {
               params: {
                 appid: WEATHER_API_KEY,
+                units: 'metric',
                 lat: latitude,
                 lon: longitude
               }
