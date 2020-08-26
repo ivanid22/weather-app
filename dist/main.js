@@ -1616,87 +1616,219 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var axio
 
 /***/ }),
 
-/***/ "./src/img/christmas-snow.svg":
-/*!************************************!*\
-  !*** ./src/img/christmas-snow.svg ***!
-  \************************************/
+/***/ "./src/img/01d.svg":
+/*!*************************!*\
+  !*** ./src/img/01d.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a3c94c443225e5d6feb167514ca31af6.svg\");\n\n//# sourceURL=webpack:///./src/img/christmas-snow.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"542974aca38b7c2dc86f6263207803f0.svg\");\n\n//# sourceURL=webpack:///./src/img/01d.svg?");
 
 /***/ }),
 
-/***/ "./src/img/cloud-fog.svg":
-/*!*******************************!*\
-  !*** ./src/img/cloud-fog.svg ***!
-  \*******************************/
+/***/ "./src/img/01n.svg":
+/*!*************************!*\
+  !*** ./src/img/01n.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"f2c73f71a8ac54d8eb2031c53be7f28d.svg\");\n\n//# sourceURL=webpack:///./src/img/cloud-fog.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"abfb54f76df9a458acce106ac112b518.svg\");\n\n//# sourceURL=webpack:///./src/img/01n.svg?");
 
 /***/ }),
 
-/***/ "./src/img/day-cloud-lightning.svg":
-/*!*****************************************!*\
-  !*** ./src/img/day-cloud-lightning.svg ***!
-  \*****************************************/
+/***/ "./src/img/02d.svg":
+/*!*************************!*\
+  !*** ./src/img/02d.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"1c88d5c4a0fcabfef9102ad00bde7a2d.svg\");\n\n//# sourceURL=webpack:///./src/img/day-cloud-lightning.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"67db568c57b3a6a411bea2844a43fc1c.svg\");\n\n//# sourceURL=webpack:///./src/img/02d.svg?");
 
 /***/ }),
 
-/***/ "./src/img/day-cloud-rain.svg":
-/*!************************************!*\
-  !*** ./src/img/day-cloud-rain.svg ***!
-  \************************************/
+/***/ "./src/img/02n.svg":
+/*!*************************!*\
+  !*** ./src/img/02n.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"37381f76c9c33ffc6b1b82a26f251abb.svg\");\n\n//# sourceURL=webpack:///./src/img/day-cloud-rain.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"651952d7882eba9b8a22dad8a3b91d82.svg\");\n\n//# sourceURL=webpack:///./src/img/02n.svg?");
 
 /***/ }),
 
-/***/ "./src/img/moon-line.svg":
-/*!*******************************!*\
-  !*** ./src/img/moon-line.svg ***!
-  \*******************************/
+/***/ "./src/img/03d.svg":
+/*!*************************!*\
+  !*** ./src/img/03d.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"abfb54f76df9a458acce106ac112b518.svg\");\n\n//# sourceURL=webpack:///./src/img/moon-line.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"9cfc3ac24c93b940db35dc17e98ccef3.svg\");\n\n//# sourceURL=webpack:///./src/img/03d.svg?");
 
 /***/ }),
 
-/***/ "./src/img/night-cloud-lightning.svg":
-/*!*******************************************!*\
-  !*** ./src/img/night-cloud-lightning.svg ***!
-  \*******************************************/
+/***/ "./src/img/03n.svg":
+/*!*************************!*\
+  !*** ./src/img/03n.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a0392278ded940e76980f6ddf3291a8e.svg\");\n\n//# sourceURL=webpack:///./src/img/night-cloud-lightning.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"9cfc3ac24c93b940db35dc17e98ccef3.svg\");\n\n//# sourceURL=webpack:///./src/img/03n.svg?");
 
 /***/ }),
 
-/***/ "./src/img/night-cloud-wind.svg":
-/*!**************************************!*\
-  !*** ./src/img/night-cloud-wind.svg ***!
-  \**************************************/
+/***/ "./src/img/04d.svg":
+/*!*************************!*\
+  !*** ./src/img/04d.svg ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"d8928d56b755e1b4797616dba9adf3a0.svg\");\n\n//# sourceURL=webpack:///./src/img/night-cloud-wind.svg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a9786e099a2ca65999bde2fa6cb01f0e.svg\");\n\n//# sourceURL=webpack:///./src/img/04d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/04n.svg":
+/*!*************************!*\
+  !*** ./src/img/04n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a9786e099a2ca65999bde2fa6cb01f0e.svg\");\n\n//# sourceURL=webpack:///./src/img/04n.svg?");
+
+/***/ }),
+
+/***/ "./src/img/09d.svg":
+/*!*************************!*\
+  !*** ./src/img/09d.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"4afe6589c01df0b8b351391d8cff7e37.svg\");\n\n//# sourceURL=webpack:///./src/img/09d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/09n.svg":
+/*!*************************!*\
+  !*** ./src/img/09n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"4afe6589c01df0b8b351391d8cff7e37.svg\");\n\n//# sourceURL=webpack:///./src/img/09n.svg?");
+
+/***/ }),
+
+/***/ "./src/img/10d.svg":
+/*!*************************!*\
+  !*** ./src/img/10d.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"37381f76c9c33ffc6b1b82a26f251abb.svg\");\n\n//# sourceURL=webpack:///./src/img/10d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/10n.svg":
+/*!*************************!*\
+  !*** ./src/img/10n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"510b0f0135b6b1c76726d0d381c4b235.svg\");\n\n//# sourceURL=webpack:///./src/img/10n.svg?");
+
+/***/ }),
+
+/***/ "./src/img/11d.svg":
+/*!*************************!*\
+  !*** ./src/img/11d.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"1c88d5c4a0fcabfef9102ad00bde7a2d.svg\");\n\n//# sourceURL=webpack:///./src/img/11d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/11n.svg":
+/*!*************************!*\
+  !*** ./src/img/11n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a0392278ded940e76980f6ddf3291a8e.svg\");\n\n//# sourceURL=webpack:///./src/img/11n.svg?");
+
+/***/ }),
+
+/***/ "./src/img/13d.svg":
+/*!*************************!*\
+  !*** ./src/img/13d.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a3c94c443225e5d6feb167514ca31af6.svg\");\n\n//# sourceURL=webpack:///./src/img/13d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/13n.svg":
+/*!*************************!*\
+  !*** ./src/img/13n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"a3c94c443225e5d6feb167514ca31af6.svg\");\n\n//# sourceURL=webpack:///./src/img/13n.svg?");
+
+/***/ }),
+
+/***/ "./src/img/50d.svg":
+/*!*************************!*\
+  !*** ./src/img/50d.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"f2c73f71a8ac54d8eb2031c53be7f28d.svg\");\n\n//# sourceURL=webpack:///./src/img/50d.svg?");
+
+/***/ }),
+
+/***/ "./src/img/50n.svg":
+/*!*************************!*\
+  !*** ./src/img/50n.svg ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"f2c73f71a8ac54d8eb2031c53be7f28d.svg\");\n\n//# sourceURL=webpack:///./src/img/50n.svg?");
 
 /***/ }),
 
@@ -1708,7 +1840,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/swiper-bundle.css */ \"./node_modules/swiper/swiper-bundle.css\");\n/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n/* harmony import */ var _geolocation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./geolocation */ \"./src/geolocation.js\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n/* harmony import */ var _theming__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./theming */ \"./src/theming.js\");\n/* harmony import */ var _weather_images__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./weather-images */ \"./src/weather-images.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nswiper__WEBPACK_IMPORTED_MODULE_3__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_3__[\"Navigation\"], swiper__WEBPACK_IMPORTED_MODULE_3__[\"Pagination\"]]);\r\n\r\nconst themeSwitcher = Object(_theming__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\r\nlet swiper;\r\n\r\nconst testGeoloc = async () => {\r\n  const ip = await _geolocation__WEBPACK_IMPORTED_MODULE_4__[\"default\"].getClientIpAddress();\r\n  const locData = await _geolocation__WEBPACK_IMPORTED_MODULE_4__[\"default\"].getLocation(ip);\r\n  const weatherData = await _weather__WEBPACK_IMPORTED_MODULE_5__[\"default\"].getWeatherData(locData);\r\n  console.log(weatherData);\r\n};\r\n\r\nwindow.onload = () => {\r\n  //testGeoloc();\r\n  document.querySelectorAll('div').forEach((elem) => {\r\n    themeSwitcher.addElement(elem);\r\n  });\r\n  window.switchTheme = themeSwitcher.switchTheme;\r\n  swiper = new swiper__WEBPACK_IMPORTED_MODULE_3__[\"default\"]('.swiper-container', {\r\n    pagination: {\r\n      el: '.swiper-pagination',\r\n      dynamicBullets: true,\r\n      init: false,\r\n    }\r\n  });\r\n  swiper.init();\r\n  const splash = document.querySelector('.current-weather-splash');\r\n  const splashImg = Object(_weather_images__WEBPACK_IMPORTED_MODULE_7__[\"createIconElement\"])(_weather_images__WEBPACK_IMPORTED_MODULE_7__[\"default\"].dayRain)\r\n  splash.appendChild(splashImg);\r\n  themeSwitcher.addElement(splashImg);\r\n  console.log(process.env.TEST_ENV);\r\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/swiper-bundle.css */ \"./node_modules/swiper/swiper-bundle.css\");\n/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.scss */ \"./src/styles/style.scss\");\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_scss__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n/* harmony import */ var _geolocation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./geolocation */ \"./src/geolocation.js\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n/* harmony import */ var _theming__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./theming */ \"./src/theming.js\");\n/* harmony import */ var _weather_images__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./weather-images */ \"./src/weather-images.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nswiper__WEBPACK_IMPORTED_MODULE_3__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_3__[\"Navigation\"], swiper__WEBPACK_IMPORTED_MODULE_3__[\"Pagination\"]]);\r\n\r\nconst themeSwitcher = Object(_theming__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\r\nlet swiper;\r\n\r\nconst testGeoloc = async () => {\r\n  const ip = await _geolocation__WEBPACK_IMPORTED_MODULE_4__[\"default\"].getClientIpAddress();\r\n  const locData = await _geolocation__WEBPACK_IMPORTED_MODULE_4__[\"default\"].getLocation(ip);\r\n  const weatherData = await _weather__WEBPACK_IMPORTED_MODULE_5__[\"default\"].getWeatherData(locData);\r\n  console.log(weatherData);\r\n};\r\n\r\nwindow.onload = () => {\r\n  //testGeoloc();\r\n  document.querySelectorAll('div').forEach((elem) => {\r\n    themeSwitcher.addElement(elem);\r\n  });\r\n  window.switchTheme = themeSwitcher.switchTheme;\r\n  swiper = new swiper__WEBPACK_IMPORTED_MODULE_3__[\"default\"]('.swiper-container', {\r\n    pagination: {\r\n      el: '.swiper-pagination',\r\n      dynamicBullets: true,\r\n      init: false,\r\n    }\r\n  });\r\n  swiper.init();\r\n  const splash = document.querySelector('.current-weather-splash');\r\n  const splashImg = Object(_weather_images__WEBPACK_IMPORTED_MODULE_7__[\"createIconElement\"])(_weather_images__WEBPACK_IMPORTED_MODULE_7__[\"default\"]['01d']);\r\n  splash.appendChild(splashImg);\r\n  themeSwitcher.addElement(splashImg);\r\n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -1743,7 +1875,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst theming = () => {\r\n  
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createIconElement\", function() { return createIconElement; });\n/* harmony import */ var _img_christmas_snow_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/christmas-snow.svg */ \"./src/img/christmas-snow.svg\");\n/* harmony import */ var _img_cloud_fog_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/cloud-fog.svg */ \"./src/img/cloud-fog.svg\");\n/* harmony import */ var _img_day_cloud_lightning_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/day-cloud-lightning.svg */ \"./src/img/day-cloud-lightning.svg\");\n/* harmony import */ var _img_day_cloud_rain_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/day-cloud-rain.svg */ \"./src/img/day-cloud-rain.svg\");\n/* harmony import */ var _img_moon_line_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/moon-line.svg */ \"./src/img/moon-line.svg\");\n/* harmony import */ var _img_night_cloud_lightning_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/night-cloud-lightning.svg */ \"./src/img/night-cloud-lightning.svg\");\n/* harmony import */ var _img_night_cloud_wind_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/night-cloud-wind.svg */ \"./src/img/night-cloud-wind.svg\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst weatherIcons = {\r\n  snow: _img_christmas_snow_svg__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\r\n  cloudFog: _img_cloud_fog_svg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\r\n  dayStorm: _img_day_cloud_lightning_svg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\r\n  dayRain: _img_day_cloud_rain_svg__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\r\n  moon: _img_moon_line_svg__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\r\n  nightStorm: _img_night_cloud_lightning_svg__WEBPACK_IMPORTED_MODULE_5__[\"default\"],\r\n  nightCloud: _img_night_cloud_wind_svg__WEBPACK_IMPORTED_MODULE_6__[\"default\"],\r\n};\r\n\r\nconst createIconElement = (icon) => {\r\n  const element = document.createElement('img');\r\n  element.classList = 'img-fluid weather-icon-img';\r\n  element.setAttribute('src', icon);\r\n  element.setAttribute('alt', 'current weather icon');\r\n  return element;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (weatherIcons);\n\n//# sourceURL=webpack:///./src/weather-images.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createIconElement\", function() { return createIconElement; });\n/* harmony import */ var _img_01d_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/01d.svg */ \"./src/img/01d.svg\");\n/* harmony import */ var _img_01n_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/01n.svg */ \"./src/img/01n.svg\");\n/* harmony import */ var _img_02d_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/02d.svg */ \"./src/img/02d.svg\");\n/* harmony import */ var _img_02n_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/02n.svg */ \"./src/img/02n.svg\");\n/* harmony import */ var _img_03d_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/03d.svg */ \"./src/img/03d.svg\");\n/* harmony import */ var _img_03n_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/03n.svg */ \"./src/img/03n.svg\");\n/* harmony import */ var _img_04d_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/04d.svg */ \"./src/img/04d.svg\");\n/* harmony import */ var _img_04n_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/04n.svg */ \"./src/img/04n.svg\");\n/* harmony import */ var _img_09d_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/09d.svg */ \"./src/img/09d.svg\");\n/* harmony import */ var _img_09n_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/09n.svg */ \"./src/img/09n.svg\");\n/* harmony import */ var _img_10d_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./img/10d.svg */ \"./src/img/10d.svg\");\n/* harmony import */ var _img_10n_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./img/10n.svg */ \"./src/img/10n.svg\");\n/* harmony import */ var _img_11d_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./img/11d.svg */ \"./src/img/11d.svg\");\n/* harmony import */ var _img_11n_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./img/11n.svg */ \"./src/img/11n.svg\");\n/* harmony import */ var _img_13d_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./img/13d.svg */ \"./src/img/13d.svg\");\n/* harmony import */ var _img_13n_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./img/13n.svg */ \"./src/img/13n.svg\");\n/* harmony import */ var _img_50d_svg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./img/50d.svg */ \"./src/img/50d.svg\");\n/* harmony import */ var _img_50n_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./img/50n.svg */ \"./src/img/50n.svg\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst weatherIcons = {\r\n  '01d': _img_01d_svg__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\r\n  '01n': _img_01n_svg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\r\n  '02d': _img_02d_svg__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\r\n  '02n': _img_02n_svg__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\r\n  '03d': _img_03d_svg__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\r\n  '03n': _img_03n_svg__WEBPACK_IMPORTED_MODULE_5__[\"default\"],\r\n  '04d': _img_04d_svg__WEBPACK_IMPORTED_MODULE_6__[\"default\"],\r\n  '04n': _img_04n_svg__WEBPACK_IMPORTED_MODULE_7__[\"default\"],\r\n  '09d': _img_09d_svg__WEBPACK_IMPORTED_MODULE_8__[\"default\"],\r\n  '09n': _img_09n_svg__WEBPACK_IMPORTED_MODULE_9__[\"default\"],\r\n  '10d': _img_10d_svg__WEBPACK_IMPORTED_MODULE_10__[\"default\"],\r\n  '10n': _img_10n_svg__WEBPACK_IMPORTED_MODULE_11__[\"default\"],\r\n  '11d': _img_11d_svg__WEBPACK_IMPORTED_MODULE_12__[\"default\"],\r\n  '11n': _img_11n_svg__WEBPACK_IMPORTED_MODULE_13__[\"default\"],\r\n  '13d': _img_13d_svg__WEBPACK_IMPORTED_MODULE_14__[\"default\"],\r\n  '13n': _img_13n_svg__WEBPACK_IMPORTED_MODULE_15__[\"default\"],\r\n  '50d': _img_50d_svg__WEBPACK_IMPORTED_MODULE_16__[\"default\"],\r\n  '50n': _img_50n_svg__WEBPACK_IMPORTED_MODULE_17__[\"default\"],\r\n}\r\n\r\nconst createIconElement = (icon) => {\r\n  const element = document.createElement('img');\r\n  element.classList = 'img-fluid weather-icon-img';\r\n  element.setAttribute('src', icon);\r\n  element.setAttribute('alt', 'current weather icon');\r\n  return element;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (weatherIcons);\n\n//# sourceURL=webpack:///./src/weather-images.js?");
 
 /***/ }),
 

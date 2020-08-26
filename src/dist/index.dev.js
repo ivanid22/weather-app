@@ -75,8 +75,7 @@ window.onload = function () {
   });
   swiper.init();
   var splash = document.querySelector('.current-weather-splash');
-  var splashImg = (0, _weatherImages.createIconElement)(_weatherImages["default"].dayRain);
+  var splashImg = (0, _weatherImages.createIconElement)(_weatherImages["default"]['01d']);
   splash.appendChild(splashImg);
   themeSwitcher.addElement(splashImg);
-  console.log(process.env.TEST_ENV);
 };

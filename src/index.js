@@ -34,8 +34,7 @@ window.onload = () => {
   });
   swiper.init();
   const splash = document.querySelector('.current-weather-splash');
-  const splashImg = createIconElement(Icons.dayRain)
+  const splashImg = createIconElement(Icons['01d']);
   splash.appendChild(splashImg);
   themeSwitcher.addElement(splashImg);
-  console.log(process.env.TEST_ENV);
 };
