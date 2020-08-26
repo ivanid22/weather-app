@@ -16,6 +16,8 @@ var _weather = _interopRequireDefault(require("./weather"));
 
 var _theming = _interopRequireDefault(require("./theming"));
 
+var _weatherImages = _interopRequireDefault(require("./weather-images"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -67,7 +69,9 @@ window.onload = function () {
   swiper = new _swiper["default"]('.swiper-container', {
     pagination: {
       el: '.swiper-pagination',
-      dynamicBullets: true
+      dynamicBullets: true,
+      init: false
     }
   });
+  swiper.init();
 };
