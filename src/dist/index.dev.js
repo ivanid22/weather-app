@@ -16,7 +16,7 @@ var _weather = _interopRequireDefault(require("./weather"));
 
 var _theming = _interopRequireDefault(require("./theming"));
 
-var _weatherImages = _interopRequireDefault(require("./weather-images"));
+var _weatherImages = _interopRequireWildcard(require("./weather-images"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61,7 +61,7 @@ var testGeoloc = function testGeoloc() {
 };
 
 window.onload = function () {
-  testGeoloc();
+  //testGeoloc();
   document.querySelectorAll('div').forEach(function (elem) {
     themeSwitcher.addElement(elem);
   });
@@ -74,4 +74,9 @@ window.onload = function () {
     }
   });
   swiper.init();
+  var splash = document.querySelector('.current-weather-splash');
+  var splashImg = (0, _weatherImages.createIconElement)(_weatherImages["default"].dayRain);
+  splash.appendChild(splashImg);
+  themeSwitcher.addElement(splashImg);
+  console.log(process.env.TEST_ENV);
 };

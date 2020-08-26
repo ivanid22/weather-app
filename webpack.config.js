@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,6 +14,9 @@ module.exports = {
       { test: /\.svg$/i, use: ['file-loader'] },
     ],
   },
+  plugins: [
+    new Dotenv(),
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,

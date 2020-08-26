@@ -5,7 +5,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import geolocation from './geolocation';
 import weather from './weather';
 import theming from './theming';
-import Icons from './weather-images';
+import Icons, { createIconElement } from './weather-images';
 
 Swiper.use([Navigation, Pagination]);
 
@@ -20,7 +20,7 @@ const testGeoloc = async () => {
 };
 
 window.onload = () => {
-  testGeoloc();
+  //testGeoloc();
   document.querySelectorAll('div').forEach((elem) => {
     themeSwitcher.addElement(elem);
   });
@@ -33,4 +33,9 @@ window.onload = () => {
     }
   });
   swiper.init();
+  const splash = document.querySelector('.current-weather-splash');
+  const splashImg = createIconElement(Icons.dayRain)
+  splash.appendChild(splashImg);
+  themeSwitcher.addElement(splashImg);
+  console.log(process.env.TEST_ENV);
 };

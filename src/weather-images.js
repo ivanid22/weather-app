@@ -16,4 +16,12 @@ const weatherIcons = {
   nightCloud,
 };
 
+export const createIconElement = (icon) => {
+  const element = document.createElement('img');
+  element.classList = 'img-fluid weather-icon-img';
+  element.setAttribute('src', icon);
+  element.setAttribute('alt', 'current weather icon');
+  return element;
+}
+
 export default weatherIcons;

@@ -2,6 +2,8 @@
 
 var path = require('path');
 
+var Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -20,6 +22,7 @@ module.exports = {
       use: ['file-loader']
     }]
   },
+  plugins: [new Dotenv()],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.createIconElement = void 0;
 
 var _christmasSnow = _interopRequireDefault(require("./img/christmas-snow.svg"));
 
@@ -30,5 +30,15 @@ var weatherIcons = {
   nightStorm: _nightCloudLightning["default"],
   nightCloud: _nightCloudWind["default"]
 };
+
+var createIconElement = function createIconElement(icon) {
+  var element = document.createElement('img');
+  element.classList = 'img-fluid weather-icon-img';
+  element.setAttribute('src', icon);
+  element.setAttribute('alt', 'current weather icon');
+  return element;
+};
+
+exports.createIconElement = createIconElement;
 var _default = weatherIcons;
 exports["default"] = _default;

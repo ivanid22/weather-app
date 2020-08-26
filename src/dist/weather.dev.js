@@ -9,8 +9,8 @@ var _axios = _interopRequireDefault(require("axios"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var WEATHER_API_KEY = '97c94feb17a879afad3f559073cb4200';
-var WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+var WEATHER_API_KEY = process.env.WEATHER_API_KEY;
+var WEATHER_API_URL = process.env.WEATHER_API_URL;
 
 var weather = function () {
   var getWeatherData = function getWeatherData(_ref) {

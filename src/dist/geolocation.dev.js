@@ -10,9 +10,9 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var IP_FIELD_REGEX = /(\d+\.\d+\.\d+\.\d+)/;
-var GEOLOCATION_API_KEY = '0932341d8f24cc327204178330f17f39';
-var GEOLOCATION_API_URL = 'http://api.ipstack.com/';
-var FETCH_IP_API_URL = 'https://www.cloudflare.com/cdn-cgi/trace';
+var GEOLOCATION_API_KEY = process.env.GEOLOCATION_API_KEY;
+var GEOLOCATION_API_URL = process.env.GEOLOCATION_API_URL;
+var FETCH_IP_API_URL = process.env.FETCH_IP_API_URL;
 
 var geolocation = function () {
   var getLocation = function getLocation(ipAddress) {
