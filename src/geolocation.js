@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const IP_FIELD_REGEX = /(\d+\.\d+\.\d+\.\d+)/;
-const GEOLOCATION_API_KEY = process.env.GEOLOCATION_API_KEY;
 const GEOLOCATION_API_URL = process.env.GEOLOCATION_API_URL;
 const FETCH_IP_API_URL = process.env.FETCH_IP_API_URL;
 
@@ -9,13 +8,12 @@ const geolocation = (() => {
 
   const getLocation = async (ipAddress) => {
     try {
-      const result = await axios.get(`${GEOLOCATION_API_URL}${ipAddress}?access_key=${GEOLOCATION_API_KEY}`);
+      const result = await axios.get(GEOLOCATION_API_URL);
       const { city, latitude, longitude } = result.data;
       return {
         city,
         latitude,
         longitude,
-        countryName: result.data.country_name,
       };
     } catch (error) {
       return error;

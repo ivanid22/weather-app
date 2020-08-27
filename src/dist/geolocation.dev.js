@@ -10,7 +10,6 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var IP_FIELD_REGEX = /(\d+\.\d+\.\d+\.\d+)/;
-var GEOLOCATION_API_KEY = process.env.GEOLOCATION_API_KEY;
 var GEOLOCATION_API_URL = process.env.GEOLOCATION_API_URL;
 var FETCH_IP_API_URL = process.env.FETCH_IP_API_URL;
 
@@ -24,7 +23,7 @@ var geolocation = function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return regeneratorRuntime.awrap(_axios["default"].get("".concat(GEOLOCATION_API_URL).concat(ipAddress, "?access_key=").concat(GEOLOCATION_API_KEY)));
+            return regeneratorRuntime.awrap(_axios["default"].get(GEOLOCATION_API_URL));
 
           case 3:
             result = _context.sent;
@@ -32,8 +31,7 @@ var geolocation = function () {
             return _context.abrupt("return", {
               city: city,
               latitude: latitude,
-              longitude: longitude,
-              countryName: result.data.country_name
+              longitude: longitude
             });
 
           case 8:
