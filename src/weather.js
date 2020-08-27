@@ -4,14 +4,14 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const WEATHER_API_URL = process.env.WEATHER_API_URL;
 
 const weather = (() => {
-  const getWeatherData = async ({ latitude, longitude, city }) => {
+  const getWeatherData = async ({ latitude, longitude, city, units }) => {
     try {
       let request;
       if (latitude && longitude) {
         request = await axios.get(WEATHER_API_URL, {
           params: {
             appid: WEATHER_API_KEY,
-            units: 'metric',
+            units,
             lat: latitude,
             lon: longitude,
           },
@@ -21,7 +21,7 @@ const weather = (() => {
           params: { 
             appid: WEATHER_API_KEY, 
             q: city,
-            units: 'metric',
+            units,
           }
         });
         console.log(request.data);
@@ -36,5 +36,13 @@ const weather = (() => {
     getWeatherData,
   };
 })();
+
+export const toFahrenheit = (temp) => {
+  return Math.round((temp * (9 / 5)) + 32);
+}
+
+export const toCelsius = (temp) => {
+  return Math.round((temp - 32) * (5 / 9));
+}
 
 export default weather;

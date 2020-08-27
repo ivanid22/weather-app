@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.toCelsius = exports.toFahrenheit = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -14,12 +14,12 @@ var WEATHER_API_URL = process.env.WEATHER_API_URL;
 
 var weather = function () {
   var getWeatherData = function getWeatherData(_ref) {
-    var latitude, longitude, city, request;
+    var latitude, longitude, city, units, request;
     return regeneratorRuntime.async(function getWeatherData$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            latitude = _ref.latitude, longitude = _ref.longitude, city = _ref.city;
+            latitude = _ref.latitude, longitude = _ref.longitude, city = _ref.city, units = _ref.units;
             _context.prev = 1;
 
             if (!(latitude && longitude)) {
@@ -31,7 +31,7 @@ var weather = function () {
             return regeneratorRuntime.awrap(_axios["default"].get(WEATHER_API_URL, {
               params: {
                 appid: WEATHER_API_KEY,
-                units: 'metric',
+                units: units,
                 lat: latitude,
                 lon: longitude
               }
@@ -48,7 +48,7 @@ var weather = function () {
               params: {
                 appid: WEATHER_API_KEY,
                 q: city,
-                units: 'metric'
+                units: units
               }
             }));
 
@@ -77,5 +77,16 @@ var weather = function () {
   };
 }();
 
+var toFahrenheit = function toFahrenheit(temp) {
+  return Math.round(temp * (9 / 5) + 32);
+};
+
+exports.toFahrenheit = toFahrenheit;
+
+var toCelsius = function toCelsius(temp) {
+  return Math.round((temp - 32) * (5 / 9));
+};
+
+exports.toCelsius = toCelsius;
 var _default = weather;
 exports["default"] = _default;

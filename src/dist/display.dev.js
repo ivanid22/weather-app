@@ -7,7 +7,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+require("swiper/swiper-bundle.css");
+
+require("./styles/style.scss");
+
 var _moment = _interopRequireDefault(require("moment"));
+
+var _swiper = _interopRequireWildcard(require("swiper"));
 
 var _jquery = _interopRequireDefault(require("jquery"));
 
@@ -31,11 +37,14 @@ var displayController = function () {
   var state = (0, _state["default"])();
   var themeSwitcher = (0, _theming["default"])();
   var events = (0, _jsEventAggregator.getAggregatorInstance)();
+
+  var currentlyDisplayedTemp = function currentlyDisplayedTemp() {
+    var val = document.querySelector('.main-temperature-container').innerText;
+    return parseInt(val, 10);
+  };
+
   events.subscribe('SELECT_LOCATION_CLICKED', function () {
     (0, _jquery["default"])('#select-city-modal').modal();
-  });
-  events.subscribe('LOCATION_NAME_SUBMITTED', function (name) {
-    console.log(name);
   });
 
   var updateTempDisplay = function updateTempDisplay(temp, unit) {
@@ -47,7 +56,7 @@ var displayController = function () {
     var mapButton = document.querySelector('.location-button-img');
     mapButton.setAttribute('src', _mapsBlack["default"]);
     themeSwitcher.addElement(mapButton);
-    document.querySelectorAll('div, button, input').forEach(function (elem) {
+    document.querySelectorAll('div, button, input, span').forEach(function (elem) {
       themeSwitcher.addElement(elem);
     });
   };
@@ -88,9 +97,30 @@ var displayController = function () {
       document.querySelector('#city-field-id').value = '';
       (0, _jquery["default"])('#select-city-modal').modal('hide');
     };
+
+    document.querySelector('.main-temperature-container').onclick = function () {
+      events.publish('MAIN_TEMP_CLICKED');
+    };
   };
 
   var init = function init() {
+    _swiper["default"].use([_swiper.Navigation, _swiper.Pagination]);
+
+    var swiper = new _swiper["default"]('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: false,
+        init: false
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+    swiper.on('init', function () {
+      initTheme();
+    });
+    swiper.init();
     initTheme();
     initListeners();
   };
@@ -99,7 +129,8 @@ var displayController = function () {
     displayWeatherData: displayWeatherData,
     updateTempDisplay: updateTempDisplay,
     updateThemeButton: updateThemeButton,
-    init: init
+    init: init,
+    currentlyDisplayedTemp: currentlyDisplayedTemp
   };
 }();
 

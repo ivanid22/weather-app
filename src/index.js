@@ -1,35 +1,29 @@
 import 'bootstrap';
-import 'swiper/swiper-bundle.css';
-import './styles/style.scss';
 import { getAggregatorInstance } from '@ivanid22/js-event-aggregator';
-import Swiper, { Navigation, Pagination } from 'swiper';
 import geolocation from './geolocation';
-import weather from './weather';
+import weather, { toCelsius, toFahrenheit } from './weather';
 import theming from './theming';
 import stateManager from './state';
 import displayController from './display';
 import $ from 'jquery';
 
-Swiper.use([Navigation, Pagination]);
-
 const themeSwitcher = theming();
 const state = stateManager();
 const events = getAggregatorInstance();
-let swiper;
 
 const fetchAppData = async (city) => {
   let weatherData;
+  const units = state.getValue('temperatureUnits');
   if(city) {
-    weatherData = await weather.getWeatherData({city});
+    weatherData = await weather.getWeatherData({city, units});
   }
   else {
     const ip = await geolocation.getClientIpAddress();
     const locData = await geolocation.getLocation(ip);
     if (locData) {
-      console.log('calling with' + city);
-      weatherData = await weather.getWeatherData(locData);
+      weatherData = await weather.getWeatherData({...locData, units});
     } else {
-      weatherData = await weather.getWeatherData({city: 'Buenos Aires'});
+      weatherData = await weather.getWeatherData({city: 'Buenos Aires', units});
     }
   }
   events.publish('WEATHER_DATA_LOADED', weatherData);
@@ -42,6 +36,17 @@ events.subscribe('LOCATION_NAME_SUBMITTED', (cityName) => {
 events.subscribe('WEATHER_DATA_LOADED', (data) => {
   displayController.displayWeatherData(data);
 });
+
+events.subscribe('MAIN_TEMP_CLICKED', () => {
+  const currentTemp = displayController.currentlyDisplayedTemp();
+  if(state.getValue('temperatureUnits') === 'metric') {
+    state.setValue('temperatureUnits', 'imperial');
+    displayController.updateTempDisplay(toFahrenheit(currentTemp), 'F');
+  } else {
+    state.setValue('temperatureUnits', 'metric');
+    displayController.updateTempDisplay(toCelsius(currentTemp), 'C');
+  }
+})
 
 events.subscribe('CHANGE_THEME_CLICK', () => {
   const currentTheme = state.getValue('theme');
@@ -56,17 +61,8 @@ events.subscribe('WEATHER_ICON_CHANGED', (icon) => {
 })
 
 window.onload = () => {
+  state.setValue('temperatureUnits', 'metric');
+  state.setValue('theme', 'light');
   displayController.init();
   fetchAppData();
-  state.setValue('weatherUnits', 'C');
-  state.setValue('theme', 'light');
-  
-  swiper = new Swiper('.swiper-container', {
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: false,
-      init: false,
-    }
-  });
-  swiper.init();
 };

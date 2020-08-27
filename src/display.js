@@ -1,4 +1,7 @@
+import 'swiper/swiper-bundle.css';
+import './styles/style.scss';
 import moment from 'moment';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import $ from 'jquery';
 import { getAggregatorInstance } from '@ivanid22/js-event-aggregator';
 import stateManager from './state';
@@ -12,13 +15,14 @@ const displayController = (() => {
   const themeSwitcher = theming();
   const events = getAggregatorInstance();
 
+  const currentlyDisplayedTemp = () => {
+    const val = document.querySelector('.main-temperature-container').innerText;
+    return parseInt(val, 10);
+  }
+
   events.subscribe('SELECT_LOCATION_CLICKED', () => {
     $('#select-city-modal').modal();
   });
-
-  events.subscribe('LOCATION_NAME_SUBMITTED', (name) => {
-    console.log(name);
-  })
 
   const updateTempDisplay = (temp, unit) => {
     const tempElement = document.querySelector('.main-temperature-container');
@@ -29,7 +33,7 @@ const displayController = (() => {
     const mapButton = document.querySelector('.location-button-img');
     mapButton.setAttribute('src', mapIcon);
     themeSwitcher.addElement(mapButton);
-    document.querySelectorAll('div, button, input').forEach((elem) => {
+    document.querySelectorAll('div, button, input, span').forEach((elem) => {
       themeSwitcher.addElement(elem);
     });
   }
@@ -66,9 +70,28 @@ const displayController = (() => {
       document.querySelector('#city-field-id').value = '';
       $('#select-city-modal').modal('hide');
     }
+    document.querySelector('.main-temperature-container').onclick = () => {
+      events.publish('MAIN_TEMP_CLICKED');
+    }
   }
 
   const init = () => {
+    Swiper.use([Navigation, Pagination]);
+    let swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: false,
+        init: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+    swiper.on('init', () => {
+      initTheme();
+    })
+    swiper.init();
     initTheme();
     initListeners();
   }
@@ -78,6 +101,7 @@ const displayController = (() => {
     updateTempDisplay,
     updateThemeButton,
     init,
+    currentlyDisplayedTemp,
   }
 })();
 

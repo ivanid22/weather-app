@@ -26,6 +26,11 @@ body {
   border-bottom: none;
 }
 
+.swiper-pagination-bullet {
+  color: #000;
+  background-color: #fff;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -83,6 +88,11 @@ body {
   filter: invert(1);
 }
 
+.weather-icon-img {
+  max-width: 15rem;
+  width: 100%;
+}
+
 .bottom-row {
   display: flex;
   justify-content: space-between;
@@ -98,6 +108,7 @@ body {
 }
 
 .location-button-img {
+  cursor: pointer;
   width: 2rem;
   height: 2rem;
 }
