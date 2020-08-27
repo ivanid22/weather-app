@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
+var _jquery = _interopRequireDefault(require("jquery"));
+
 var _jsEventAggregator = require("@ivanid22/js-event-aggregator");
 
 var _state = _interopRequireDefault(require("./state"));
@@ -16,6 +18,8 @@ var _state = _interopRequireDefault(require("./state"));
 var _theming = _interopRequireDefault(require("./theming"));
 
 var _weatherImages = _interopRequireWildcard(require("./weather-images"));
+
+var _mapsBlack = _interopRequireDefault(require("./img/maps-black.svg"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -27,6 +31,12 @@ var displayController = function () {
   var state = (0, _state["default"])();
   var themeSwitcher = (0, _theming["default"])();
   var events = (0, _jsEventAggregator.getAggregatorInstance)();
+  events.subscribe('SELECT_LOCATION_CLICKED', function () {
+    (0, _jquery["default"])('#select-city-modal').modal();
+  });
+  events.subscribe('LOCATION_NAME_SUBMITTED', function (name) {
+    console.log(name);
+  });
 
   var updateTempDisplay = function updateTempDisplay(temp, unit) {
     var tempElement = document.querySelector('.main-temperature-container');
@@ -34,10 +44,12 @@ var displayController = function () {
   };
 
   var initTheme = function initTheme() {
-    document.querySelectorAll('div').forEach(function (elem) {
+    var mapButton = document.querySelector('.location-button-img');
+    mapButton.setAttribute('src', _mapsBlack["default"]);
+    themeSwitcher.addElement(mapButton);
+    document.querySelectorAll('div, button, input').forEach(function (elem) {
       themeSwitcher.addElement(elem);
     });
-    themeSwitcher.addElement(document.querySelector('.change-theme-button'));
   };
 
   var updateThemeButton = function updateThemeButton() {
@@ -59,9 +71,22 @@ var displayController = function () {
 
   var initListeners = function initListeners() {
     var themeSwitchButton = document.querySelector('.change-theme-button');
+    var locationButton = document.querySelector('.location-button-img');
 
     themeSwitchButton.onclick = function () {
       events.publish('CHANGE_THEME_CLICK');
+    };
+
+    locationButton.onclick = function () {
+      events.publish('SELECT_LOCATION_CLICKED');
+    };
+
+    var modalOk = document.querySelector('.modal-ok-button');
+
+    modalOk.onclick = function () {
+      events.publish('LOCATION_NAME_SUBMITTED', document.querySelector('#city-field-id').value);
+      document.querySelector('#city-field-id').value = '';
+      (0, _jquery["default"])('#select-city-modal').modal('hide');
     };
   };
 

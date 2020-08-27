@@ -16,6 +16,16 @@ body {
   height: 100%;
 }
 
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -40,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  max-width: 575px;
 }
 
 .dark {
@@ -84,4 +95,21 @@ body {
   border: 2px solid;
   border-radius: 5px;
   padding: 0.2em 1em;
+}
+
+.location-button-img {
+  width: 2rem;
+  height: 2rem;
+}
+
+#city-field-id {
+  text-align: center;
+  width: 100%;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+}
+
+.modal-ok-button {
+  width: 50%;
 }

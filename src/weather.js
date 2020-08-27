@@ -17,7 +17,14 @@ const weather = (() => {
           },
         });
       } else {
-        request = await axios.get(WEATHER_API_URL, { params: { appid: WEATHER_API_KEY, q: city } });
+        request = await axios.get(WEATHER_API_URL, { 
+          params: { 
+            appid: WEATHER_API_KEY, 
+            q: city,
+            units: 'metric',
+          }
+        });
+        console.log(request.data);
       }
       return (request.data);
     } catch (error) {

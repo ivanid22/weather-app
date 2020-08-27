@@ -22,6 +22,8 @@ var _state = _interopRequireDefault(require("./state"));
 
 var _display = _interopRequireDefault(require("./display"));
 
+var _jquery = _interopRequireDefault(require("jquery"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -34,6 +36,77 @@ var themeSwitcher = (0, _theming["default"])();
 var state = (0, _state["default"])();
 var events = (0, _jsEventAggregator.getAggregatorInstance)();
 var swiper;
+
+var fetchAppData = function fetchAppData(city) {
+  var weatherData, ip, locData;
+  return regeneratorRuntime.async(function fetchAppData$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (!city) {
+            _context.next = 6;
+            break;
+          }
+
+          _context.next = 3;
+          return regeneratorRuntime.awrap(_weather["default"].getWeatherData({
+            city: city
+          }));
+
+        case 3:
+          weatherData = _context.sent;
+          _context.next = 22;
+          break;
+
+        case 6:
+          _context.next = 8;
+          return regeneratorRuntime.awrap(_geolocation["default"].getClientIpAddress());
+
+        case 8:
+          ip = _context.sent;
+          _context.next = 11;
+          return regeneratorRuntime.awrap(_geolocation["default"].getLocation(ip));
+
+        case 11:
+          locData = _context.sent;
+
+          if (!locData) {
+            _context.next = 19;
+            break;
+          }
+
+          console.log('calling with' + city);
+          _context.next = 16;
+          return regeneratorRuntime.awrap(_weather["default"].getWeatherData(locData));
+
+        case 16:
+          weatherData = _context.sent;
+          _context.next = 22;
+          break;
+
+        case 19:
+          _context.next = 21;
+          return regeneratorRuntime.awrap(_weather["default"].getWeatherData({
+            city: 'Buenos Aires'
+          }));
+
+        case 21:
+          weatherData = _context.sent;
+
+        case 22:
+          events.publish('WEATHER_DATA_LOADED', weatherData);
+
+        case 23:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
+
+events.subscribe('LOCATION_NAME_SUBMITTED', function (cityName) {
+  fetchAppData(cityName);
+});
 events.subscribe('WEATHER_DATA_LOADED', function (data) {
   _display["default"].displayWeatherData(data);
 });
@@ -48,56 +121,6 @@ events.subscribe('CHANGE_THEME_CLICK', function () {
 events.subscribe('WEATHER_ICON_CHANGED', function (icon) {
   themeSwitcher.addElement(icon);
 });
-
-var fetchAppData = function fetchAppData() {
-  var ip, locData, weatherData;
-  return regeneratorRuntime.async(function fetchAppData$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          _context.next = 2;
-          return regeneratorRuntime.awrap(_geolocation["default"].getClientIpAddress());
-
-        case 2:
-          ip = _context.sent;
-          _context.next = 5;
-          return regeneratorRuntime.awrap(_geolocation["default"].getLocation(ip));
-
-        case 5:
-          locData = _context.sent;
-
-          if (!locData) {
-            _context.next = 12;
-            break;
-          }
-
-          _context.next = 9;
-          return regeneratorRuntime.awrap(_weather["default"].getWeatherData(locData));
-
-        case 9:
-          weatherData = _context.sent;
-          _context.next = 15;
-          break;
-
-        case 12:
-          _context.next = 14;
-          return regeneratorRuntime.awrap(_weather["default"].getWeatherData({
-            city: 'Buenos Aires'
-          }));
-
-        case 14:
-          weatherData = _context.sent;
-
-        case 15:
-          events.publish('WEATHER_DATA_LOADED', weatherData);
-
-        case 16:
-        case "end":
-          return _context.stop();
-      }
-    }
-  });
-};
 
 window.onload = function () {
   _display["default"].init();

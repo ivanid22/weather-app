@@ -1,14 +1,24 @@
 import moment from 'moment';
+import $ from 'jquery';
 import { getAggregatorInstance } from '@ivanid22/js-event-aggregator';
 import stateManager from './state';
 import theming from './theming';
 import Icons from './weather-images';
 import { createIconElement } from './weather-images';
+import mapIcon from './img/maps-black.svg';
 
 const displayController = (() => {
   const state = stateManager();
   const themeSwitcher = theming();
   const events = getAggregatorInstance();
+
+  events.subscribe('SELECT_LOCATION_CLICKED', () => {
+    $('#select-city-modal').modal();
+  });
+
+  events.subscribe('LOCATION_NAME_SUBMITTED', (name) => {
+    console.log(name);
+  })
 
   const updateTempDisplay = (temp, unit) => {
     const tempElement = document.querySelector('.main-temperature-container');
@@ -16,10 +26,12 @@ const displayController = (() => {
   }
 
   const initTheme = () => {
-    document.querySelectorAll('div').forEach((elem) => {
-        themeSwitcher.addElement(elem);
+    const mapButton = document.querySelector('.location-button-img');
+    mapButton.setAttribute('src', mapIcon);
+    themeSwitcher.addElement(mapButton);
+    document.querySelectorAll('div, button, input').forEach((elem) => {
+      themeSwitcher.addElement(elem);
     });
-    themeSwitcher.addElement(document.querySelector('.change-theme-button'));
   }
 
   const updateThemeButton = () => {
@@ -41,8 +53,18 @@ const displayController = (() => {
 
   const initListeners = () => {
     const themeSwitchButton = document.querySelector('.change-theme-button');
+    const locationButton = document.querySelector('.location-button-img');
     themeSwitchButton.onclick = () => {
       events.publish('CHANGE_THEME_CLICK');
+    }
+    locationButton.onclick = () => {
+      events.publish('SELECT_LOCATION_CLICKED');
+    }
+    const modalOk = document.querySelector('.modal-ok-button');
+    modalOk.onclick = () => {
+      events.publish('LOCATION_NAME_SUBMITTED', document.querySelector('#city-field-id').value);
+      document.querySelector('#city-field-id').value = '';
+      $('#select-city-modal').modal('hide');
     }
   }
 

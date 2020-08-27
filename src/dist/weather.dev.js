@@ -39,7 +39,7 @@ var weather = function () {
 
           case 5:
             request = _context.sent;
-            _context.next = 11;
+            _context.next = 12;
             break;
 
           case 8:
@@ -47,27 +47,29 @@ var weather = function () {
             return regeneratorRuntime.awrap(_axios["default"].get(WEATHER_API_URL, {
               params: {
                 appid: WEATHER_API_KEY,
-                q: city
+                q: city,
+                units: 'metric'
               }
             }));
 
           case 10:
             request = _context.sent;
+            console.log(request.data);
 
-          case 11:
+          case 12:
             return _context.abrupt("return", request.data);
 
-          case 14:
-            _context.prev = 14;
+          case 15:
+            _context.prev = 15;
             _context.t0 = _context["catch"](1);
             return _context.abrupt("return", _context.t0);
 
-          case 17:
+          case 18:
           case "end":
             return _context.stop();
         }
       }
-    }, null, null, [[1, 14]]);
+    }, null, null, [[1, 15]]);
   };
 
   return {
