@@ -1,25 +1,25 @@
 import axios from 'axios';
 
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
-const WEATHER_API_URL = process.env.WEATHER_API_URL;
+const weatherApiKey = process.env.WEATHER_API_KEY;
+const weatherApiUrl = process.env.WEATHER_API_URL;
 
 const weather = (() => {
   const getWeatherData = async ({ latitude, longitude, city, units }) => {
     try {
       let request;
       if (latitude && longitude) {
-        request = await axios.get(WEATHER_API_URL, {
+        request = await axios.get(weatherApiUrl, {
           params: {
-            appid: WEATHER_API_KEY,
+            appid: weatherApiKey,
             units,
             lat: latitude,
             lon: longitude,
           },
         });
       } else {
-        request = await axios.get(WEATHER_API_URL, { 
+        request = await axios.get(weatherApiUrl, { 
           params: { 
-            appid: WEATHER_API_KEY, 
+            appid: weatherApiKey, 
             q: city,
             units,
           }
