@@ -34,7 +34,9 @@ events.subscribe('LOCATION_NAME_SUBMITTED', (cityName) => {
 });
 
 events.subscribe('WEATHER_DATA_LOADED', (data) => {
+  console.log(data);
   displayController.displayWeatherData(data);
+  displayController.displayAdditionalWeatherData(data);
 });
 
 events.subscribe('MAIN_TEMP_CLICKED', () => {

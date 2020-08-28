@@ -27,6 +27,14 @@ var _weatherImages = _interopRequireWildcard(require("./weather-images"));
 
 var _mapsBlack = _interopRequireDefault(require("./img/maps-black.svg"));
 
+var _dropHumidity = _interopRequireDefault(require("./img/drop-humidity.svg"));
+
+var _thermometer = _interopRequireDefault(require("./img/thermometer.svg"));
+
+var _wind = _interopRequireDefault(require("./img/wind.svg"));
+
+var _manometer = _interopRequireDefault(require("./img/manometer.svg"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -66,8 +74,33 @@ var displayController = function () {
     btn.innerText = state.getValue('theme') === 'light' ? 'dark' : 'light';
   };
 
+  var createAdditionalInfoItem = function createAdditionalInfoItem(icon, data) {
+    var element = document.createElement('div');
+    var iconElement = document.createElement('img');
+    var dataItem = document.createElement('div');
+    element.classList.add('addition-info-item');
+    dataItem.classList.add('additional-info-item-data');
+    iconElement.setAttribute('src', icon);
+    iconElement.setAttribute('alt', 'info icon');
+    iconElement.classList.add('additional-info-item-icon');
+    dataItem.innerText = data;
+    element.append(iconElement, dataItem);
+    themeSwitcher.addElement(iconElement);
+    return element;
+  };
+
+  var displayAdditionalWeatherData = function displayAdditionalWeatherData(data) {
+    var tempUnit = state.getValue('temperatureUnits') === 'metric' ? 'C' : 'F';
+    var container = document.querySelector('.additional-info-pane');
+    container.innerHTML = '';
+    var feelsLike = createAdditionalInfoItem(_thermometer["default"], "".concat(data.main.feels_like, " ").concat(tempUnit));
+    var wind = createAdditionalInfoItem(_wind["default"], "".concat(data.wind.speed, " km/h"));
+    var humidity = createAdditionalInfoItem(_dropHumidity["default"], "".concat(data.main.humidity, "%"));
+    var pressure = createAdditionalInfoItem(_manometer["default"], "".concat(data.main.pressure, " hPa"));
+    container.append(feelsLike, wind, humidity, pressure);
+  };
+
   var displayWeatherData = function displayWeatherData(data) {
-    console.log(data.weather[0].main);
     document.querySelector('.main-temperature-container').innerText = "".concat(Math.floor(data.main.temp), "\xB0C");
     var mainTempDisplay = document.querySelector('.current-weather-splash');
     mainTempDisplay.innerHTML = '';
@@ -130,7 +163,8 @@ var displayController = function () {
     updateTempDisplay: updateTempDisplay,
     updateThemeButton: updateThemeButton,
     init: init,
-    currentlyDisplayedTemp: currentlyDisplayedTemp
+    currentlyDisplayedTemp: currentlyDisplayedTemp,
+    displayAdditionalWeatherData: displayAdditionalWeatherData
   };
 }();
 

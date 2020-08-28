@@ -110,7 +110,11 @@ events.subscribe('LOCATION_NAME_SUBMITTED', function (cityName) {
   fetchAppData(cityName);
 });
 events.subscribe('WEATHER_DATA_LOADED', function (data) {
+  console.log(data);
+
   _display["default"].displayWeatherData(data);
+
+  _display["default"].displayAdditionalWeatherData(data);
 });
 events.subscribe('MAIN_TEMP_CLICKED', function () {
   var currentTemp = _display["default"].currentlyDisplayedTemp();

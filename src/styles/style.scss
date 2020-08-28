@@ -124,3 +124,25 @@ body {
 .modal-ok-button {
   width: 50%;
 }
+
+.additional-info-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addition-info-item {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.additional-info-item-icon {
+  max-width: 4rem;
+  max-height: 3rem;
+}
+
+.additional-info-item-data {
+  min-width: 5rem;
+}

@@ -9,6 +9,10 @@ import theming from './theming';
 import Icons from './weather-images';
 import { createIconElement } from './weather-images';
 import mapIcon from './img/maps-black.svg';
+import humidityIcon from './img/drop-humidity.svg';
+import thermometerIcon from './img/thermometer.svg';
+import windIcon from './img/wind.svg';
+import pressureIcon from './img/manometer.svg';
 
 const displayController = (() => {
   const state = stateManager();
@@ -43,8 +47,33 @@ const displayController = (() => {
     btn.innerText = state.getValue('theme') === 'light' ? 'dark' : 'light';
   }
 
+  const createAdditionalInfoItem = (icon, data) => {
+    const element = document.createElement('div');
+    const iconElement = document.createElement('img');
+    const dataItem = document.createElement('div');
+    element.classList.add('addition-info-item');
+    dataItem.classList.add('additional-info-item-data')
+    iconElement.setAttribute('src', icon);
+    iconElement.setAttribute('alt', 'info icon');
+    iconElement.classList.add('additional-info-item-icon');
+    dataItem.innerText = data;
+    element.append(iconElement, dataItem);
+    themeSwitcher.addElement(iconElement);
+    return element;
+  }
+
+  const displayAdditionalWeatherData = (data) => {
+    const tempUnit = state.getValue('temperatureUnits') === 'metric' ? 'C' : 'F';
+    const container = document.querySelector('.additional-info-pane');
+    container.innerHTML = '';
+    const feelsLike = createAdditionalInfoItem(thermometerIcon, `${data.main.feels_like} ${tempUnit}`)
+    const wind = createAdditionalInfoItem(windIcon, `${data.wind.speed} km/h`);
+    const humidity = createAdditionalInfoItem(humidityIcon, `${data.main.humidity}%`);
+    const pressure = createAdditionalInfoItem(pressureIcon, `${data.main.pressure} hPa`)
+    container.append(feelsLike, wind, humidity, pressure);
+  }
+
   const displayWeatherData = (data) => {
-    console.log(data.weather[0].main);
     document.querySelector('.main-temperature-container').innerText = `${Math.floor(data.main.temp)}°C`;
     const mainTempDisplay = document.querySelector('.current-weather-splash');
     mainTempDisplay.innerHTML = '';
@@ -102,6 +131,7 @@ const displayController = (() => {
     updateThemeButton,
     init,
     currentlyDisplayedTemp,
+    displayAdditionalWeatherData,
   }
 })();
 
