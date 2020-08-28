@@ -3,14 +3,13 @@ const theming = () => {
   let currentTheme = 'light';
 
   const clearElement = (element) => {
-    element.classList.remove('light', 'dark')
+    element.classList.remove('light', 'dark');
   };
 
   const addElement = (element) => {
     clearElement(element);
-    if(element.parentElement.classList.contains('swiper-pagination')) {
-      console.log('contains');
-      element.classList.add((currentTheme === 'light') ? 'dark' : 'light')
+    if (element.parentElement.classList.contains('swiper-pagination')) {
+      element.classList.add((currentTheme === 'light') ? 'dark' : 'light');
     } else {
       element.classList.add(currentTheme);
     }
@@ -20,21 +19,19 @@ const theming = () => {
   const switchTheme = () => {
     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
     elements.forEach(element => {
-      if(element.tagName.toLowerCase() === 'img') element.classList.toggle('invert-img');
+      if (element.tagName.toLowerCase() === 'img') element.classList.toggle('invert-img');
       else if (element.parentElement.classList.contains('swiper-pagination')) {
         clearElement(element);
-        currentTheme === 'light' ? element.classList.add('dark') : element.classList.add('light');
-      }
-      else {
+        const invertedTheme = currentTheme === 'light' ? 'dark' : 'light';
+        element.classList.add(invertedTheme);
+      } else {
         clearElement(element);
         element.classList.add(currentTheme);
       }
     });
   };
 
-  const getCurrentTheme = () => {
-    return currentTheme;
-  };
+  const getCurrentTheme = () => currentTheme;
 
   return {
     addElement,

@@ -5,7 +5,6 @@ import weather, { toCelsius, toFahrenheit } from './weather';
 import theming from './theming';
 import stateManager from './state';
 import displayController from './display';
-import $ from 'jquery';
 
 const themeSwitcher = theming();
 const state = stateManager();
@@ -14,17 +13,15 @@ const events = getAggregatorInstance();
 const fetchAppData = async (city) => {
   let weatherData;
   const units = state.getValue('temperatureUnits');
-  if(city) {
-    weatherData = await weather.getWeatherData({city, units});
-  }
-  else {
+  if (city) {
+    weatherData = await weather.getWeatherData({ city, units });
+  } else {
     const ip = await geolocation.getClientIpAddress();
     const locData = await geolocation.getLocation(ip);
-    console.log(locData)
     if ((locData.latitude) && (locData.longitude)) {
-      weatherData = await weather.getWeatherData({...locData, units});
+      weatherData = await weather.getWeatherData({ ...locData, units });
     } else {
-      weatherData = await weather.getWeatherData({city: 'Buenos Aires', units});
+      weatherData = await weather.getWeatherData({ city: 'Buenos Aires', units });
     }
   }
   events.publish('WEATHER_DATA_LOADED', weatherData);
@@ -35,21 +32,20 @@ events.subscribe('LOCATION_NAME_SUBMITTED', (cityName) => {
 });
 
 events.subscribe('WEATHER_DATA_LOADED', (data) => {
-  console.log(data);
   displayController.displayWeatherData(data);
   displayController.displayAdditionalWeatherData(data);
 });
 
 events.subscribe('MAIN_TEMP_CLICKED', () => {
   const currentTemp = displayController.currentlyDisplayedTemp();
-  if(state.getValue('temperatureUnits') === 'metric') {
+  if (state.getValue('temperatureUnits') === 'metric') {
     state.setValue('temperatureUnits', 'imperial');
     displayController.updateTempDisplay(toFahrenheit(currentTemp), 'F');
   } else {
     state.setValue('temperatureUnits', 'metric');
     displayController.updateTempDisplay(toCelsius(currentTemp), 'C');
   }
-})
+});
 
 events.subscribe('CHANGE_THEME_CLICK', () => {
   const currentTheme = state.getValue('theme');
@@ -61,7 +57,7 @@ events.subscribe('CHANGE_THEME_CLICK', () => {
 
 events.subscribe('WEATHER_ICON_CHANGED', (icon) => {
   themeSwitcher.addElement(icon);
-})
+});
 
 window.onload = () => {
   state.setValue('temperatureUnits', 'metric');

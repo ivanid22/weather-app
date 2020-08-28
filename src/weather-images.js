@@ -36,7 +36,7 @@ const weatherIcons = {
   '13n': icon13n,
   '50d': icon50d,
   '50n': icon50n,
-}
+};
 
 export const createIconElement = (icon) => {
   const element = document.createElement('img');
@@ -44,6 +44,6 @@ export const createIconElement = (icon) => {
   element.setAttribute('src', icon);
   element.setAttribute('alt', 'current weather icon');
   return element;
-}
+};
 
 export default weatherIcons;

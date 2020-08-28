@@ -5,7 +5,6 @@ const geoApiUrl = process.env.GEOLOCATION_API_URL;
 const fetchIpApiUrl = process.env.FETCH_IP_API_URL;
 
 const geolocation = (() => {
-
   const getLocation = async (ipAddress) => {
     try {
       const result = await axios.get(`${geoApiUrl}${ipAddress}`);
