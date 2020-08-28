@@ -25,6 +25,7 @@ const displayController = (() => {
   }
 
   events.subscribe('SELECT_LOCATION_CLICKED', () => {
+    document.querySelector('#city-field-id').value = '';
     $('#select-city-modal').modal();
   });
 
@@ -81,7 +82,7 @@ const displayController = (() => {
     mainTempDisplay.appendChild(weatherIcon);
     events.publish('WEATHER_ICON_CHANGED', weatherIcon);
     const locationInfoContainer = document.querySelector('.location-info-container');
-    locationInfoContainer.innerText = `${data.name}/\n${data.weather[0].main}/\n${moment().format('hh:mm a')}/`;
+    locationInfoContainer.innerText = `${data.name}, ${data.sys.country}/\n${data.weather[0].main}/\n${moment().format('hh:mm a')}/`;
   }
 
   const initListeners = () => {

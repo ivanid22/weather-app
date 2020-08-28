@@ -20,7 +20,8 @@ const fetchAppData = async (city) => {
   else {
     const ip = await geolocation.getClientIpAddress();
     const locData = await geolocation.getLocation(ip);
-    if (locData) {
+    console.log(locData)
+    if ((locData.latitude) && (locData.longitude)) {
       weatherData = await weather.getWeatherData({...locData, units});
     } else {
       weatherData = await weather.getWeatherData({city: 'Buenos Aires', units});
