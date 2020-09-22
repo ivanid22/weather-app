@@ -1,0 +1,149 @@
+@import "bootstrap/scss/bootstrap";
+
+* {
+  transition: all 0.5s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.swiper-pagination-bullet {
+  color: #000;
+  background-color: #fff;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 575px;
+}
+
+.dark {
+  color: #fff;
+  background-color: #000;
+  border-color: #fff;
+}
+
+.light {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-temperature-container {
+  font-size: 5rem;
+}
+
+.location-info-container {
+  font-size: 1.5rem;
+}
+
+.invert-img {
+  filter: invert(1);
+}
+
+.weather-icon-img {
+  max-width: 15rem;
+  width: 100%;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 0.1rem;
+}
+
+.ui-button {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 0.2em 1em;
+}
+
+.location-button-img {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+
+#city-field-id {
+  text-align: center;
+  width: 100%;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 0.5em 1.5em;
+}
+
+.modal-ok-button {
+  width: 50%;
+}
+
+.additional-info-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.addition-info-item {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.additional-info-item-icon {
+  max-width: 4rem;
+  max-height: 3rem;
+}
+
+.additional-info-item-data {
+  min-width: 5rem;
+}
