@@ -40,6 +40,7 @@ const displayController = (() => {
     document.querySelectorAll('div, button, input, span').forEach((elem) => {
       themeSwitcher.addElement(elem);
     });
+    themeSwitcher.applyTheme();
   };
 
   const updateThemeButton = () => {

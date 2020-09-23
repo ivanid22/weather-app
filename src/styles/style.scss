@@ -36,8 +36,6 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -69,6 +67,25 @@ body {
   color: #000;
   background-color: #fff;
   border-color: #000;
+}
+
+img.dark {
+  color: #000;
+  background-color: #fff;
+  border-color: inherit;
+  filter: invert(1);
+}
+
+.swiper-pagination > .dark {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+}
+
+.swiper-pagination > .light {
+  color: #fff;
+  background-color: #000;
+  border-color: #fff;
 }
 
 .top-row {
