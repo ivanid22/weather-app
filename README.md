@@ -3,7 +3,7 @@
 
   ![Dark-1](./dark-1.png) ![Light-2](./light-2.png)
   ## Live version
-  - [Live version](https://ivanid22-weather-app.netlify.app/) 
+  - [Live version](https://iid-weather-app.netlify.app/) 
   
   ## Built With
   - JavaScript (ES6)
